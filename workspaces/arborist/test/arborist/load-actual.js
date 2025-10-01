@@ -311,7 +311,7 @@ t.test('transplant workspace targets, even if links not present', async t => {
   }), 'do not transplant node named "a"')
 })
 
-t.test('load workspaces when loading from hidding lockfile', async t => {
+t.test('load workspaces when loading from hidden lockfile', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       workspaces: ['packages/*'],
@@ -460,7 +460,7 @@ t.test('no edge errors for nested deps', async t => {
     },
   })
 
-  // disable treeCheck since it prevents the original issue from occuring
+  // disable treeCheck since it prevents the original issue from occurring
   const ArboristNoTreeCheck = t.mock('../../lib/arborist', {
     '../../lib/tree-check.js': tree => tree,
   })

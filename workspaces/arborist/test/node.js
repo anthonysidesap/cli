@@ -1322,7 +1322,7 @@ t.test('replace workspaces keeping existing edges out', t => {
   t.end()
 })
 
-t.test('dont rely on legacy _resolved for file: nodes', async t => {
+t.test('do not rely on legacy _resolved for file: nodes', async t => {
   const old = new Node({
     pkg: {
       _resolved: 'file:/x/y/z/blorg.tgz',
@@ -2242,7 +2242,7 @@ t.test('virtual references to root node has devDep edges', async t => {
   t.equal(virtualRoot.edgesOut.get('a').type, 'dev')
 })
 
-t.test('globaTop set for children of global link root target', async t => {
+t.test('globalTop set for children of global link root target', async t => {
   const root = new Link({
     path: '/usr/local/lib',
     realpath: '/data/lib',

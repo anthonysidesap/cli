@@ -1129,7 +1129,7 @@ t.test('resolve links in global mode', async t => {
   t.equal(tree.children.get('linked-dep').resolved, resolved)
 })
 
-t.test('dont get confused if root matches duped metadep', async t => {
+t.test('do not get confused if root matches duped metadep', async t => {
   createRegistry(t, true)
   const path = resolve(fixtures, 'test-root-matches-metadep')
   const arb = newArb(path, { installStrategy: 'hoisted' })
@@ -1320,7 +1320,7 @@ t.test('override a conflict with the root peer dep (with force)', async t => {
   t.matchSnapshot(await printIdeal(path, { strictPeerDeps: false, force: true }), 'non-strict and force override')
 })
 
-t.test('push conflicted peer deps deeper in to the tree to solve', async t => {
+t.test('push conflicted peer deps deeper into the tree to solve', async t => {
   const path = resolve(fixtures, 'testing-peer-dep-conflict-chain/override-dep')
   createRegistry(t, true)
   t.matchSnapshot(await printIdeal(path))
@@ -3284,7 +3284,7 @@ t.test('competing peerSets resolve in both root and workspace', async t => {
     ]
   }
 
-  await t.test('overlapping peerSets dont warn', async t => {
+  await t.test('overlapping peerSets do not warn', async t => {
     // This should not cause a warning because replacing `c@2` and `d@2`
     // with `c@1` and `d@1` is still valid.
     //

@@ -1323,7 +1323,7 @@ module.exports = cls => class Reifier extends cls {
           const alias = name !== pname
           newSpec = alias ? `npm:${pname}@${range}` : range
         } else if (req.hosted) {
-          // save the git+https url if it has auth, otherwise shortcut
+          // save the git+https url if it has auth; otherwise, shortcut
           const h = req.hosted
           const opt = { noCommittish: false }
           if (h.https && h.auth) {
@@ -1392,7 +1392,7 @@ module.exports = cls => class Reifier extends cls {
 
     // Returns true if any of the edges from this node has a semver
     // range definition that is an exact match to the version installed
-    // e.g: should return true if for a given an installed version 1.0.0,
+    // e.g: should return true if for a given and installed version 1.0.0,
     // range is either =1.0.0 or 1.0.0
     const exactVersion = node => {
       for (const edge of node.edgesIn) {
